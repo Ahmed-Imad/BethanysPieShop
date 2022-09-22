@@ -33,10 +33,7 @@
             }
 
             _bethanysPieShopDbContext.Orders.Add(order);
-            _bethanysPieShopDbContext.SaveChanges();
-
-
-            
+            _bethanysPieShopDbContext.SaveChanges();                       
         }
 
     }
