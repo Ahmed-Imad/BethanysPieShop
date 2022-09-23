@@ -2,7 +2,7 @@
 
 namespace BethanysPieShop.Controllers
 {
-    public class ContactController1 : Controller
+    public class ContactController : Controller
     {
         public IActionResult Index()
         {

@@ -13,6 +13,7 @@ builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.AddDbContext<BethanysPieShopDbContext>(options =>
 {
     options.UseSqlServer(
@@ -23,12 +24,14 @@ var app = builder.Build();
 
 app.UseStaticFiles();
 app.UseSession();
-
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");//"{controller=HOme}/{action=Index}/{id?}
 
-app.MapDefaultControllerRoute();//"{controller=HOme}/{action=Index}/{id?}
+app.MapRazorPages();
 DbInitializer.Seed(app);
 app.Run();

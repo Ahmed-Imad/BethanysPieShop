@@ -1,5 +1,5 @@
 ﻿using BethanysPieShop.Models;
-using BethanysPieShop.Models.ViewModels;
+using BethanysPieShop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BethanysPieShop.Controllers
